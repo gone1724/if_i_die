@@ -25,3 +25,4 @@
   python mirror.py --url https://example.com/ --output-dir my_site
   ```
 - wget 选择：Windows 优先使用仓库内 `tools/mingw64/bin/wget.exe`；其他系统优先系统 wget，找不到再用仓库内的。
+- 可部署在Cloudflare Pages
