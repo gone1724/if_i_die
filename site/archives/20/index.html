@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="msvalidate.01" content="89A0DDDA0371BB0C5E12E3095323E80B" />
+    <title>Linux 安装基础的应用 - SixHz's Blog</title>
+
+    <!-- 添加网站图标 -->
+    <link rel="icon" href="https://academic.sixhz.top/images/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- 使用url函数转换相关路径 -->
+    <link rel="stylesheet" href="../../usr/themes/default/normalize.css">
+    <link rel="stylesheet" href="../../usr/themes/default/grid.css">
+    <link rel="stylesheet" href="../../usr/themes/default/style.css">
+
+    <!-- 通过自有函数输出HTML头部信息 -->
+    <meta name="description" content="1Panel 面板v1 版本安装 (Docker 附带就安装了)https://1panel.cn/docs/v1/installation/online_installation/#2Linu..." />
+<meta name="generator" content="Typecho 1.2.1" />
+<meta name="template" content="default" />
+<link rel="pingback" href="https://blog.sixhz.top/action/xmlrpc" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.sixhz.top/action/xmlrpc?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.sixhz.top/action/xmlrpc?wlw" />
+<link rel="alternate" type="application/rss+xml" title="Linux 安装基础的应用 &raquo; SixHz's Blog &raquo; RSS 2.0" href="https://blog.sixhz.top/feed/archives/20/" />
+<link rel="alternate" type="application/rdf+xml" title="Linux 安装基础的应用 &raquo; SixHz's Blog &raquo; RSS 1.0" href="https://blog.sixhz.top/feed/rss/archives/20/" />
+<link rel="alternate" type="application/atom+xml" title="Linux 安装基础的应用 &raquo; SixHz's Blog &raquo; ATOM 1.0" href="https://blog.sixhz.top/feed/atom/archives/20/" />
+<script type="text/javascript">
+(function () {
+    window.TypechoComment = {
+        dom : function (id) {
+            return document.getElementById(id);
+        },
+    
+        create : function (tag, attr) {
+            var el = document.createElement(tag);
+        
+            for (var key in attr) {
+                el.setAttribute(key, attr[key]);
+            }
+        
+            return el;
+        },
+
+        reply : function (cid, coid) {
+            var comment = this.dom(cid), parent = comment.parentNode,
+                response = this.dom('respond-post-20'), input = this.dom('comment-parent'),
+                form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0],
+                textarea = response.getElementsByTagName('textarea')[0];
+
+            if (null == input) {
+                input = this.create('input', {
+                    'type' : 'hidden',
+                    'name' : 'parent',
+                    'id'   : 'comment-parent'
+                });
+
+                form.appendChild(input);
+            }
+
+            input.setAttribute('value', coid);
+
+            if (null == this.dom('comment-form-place-holder')) {
+                var holder = this.create('div', {
+                    'id' : 'comment-form-place-holder'
+                });
+
+                response.parentNode.insertBefore(holder, response);
+            }
+
+            comment.appendChild(response);
+            this.dom('cancel-comment-reply-link').style.display = '';
+
+            if (null != textarea && 'text' == textarea.name) {
+                textarea.focus();
+            }
+
+            return false;
+        },
+
+        cancelReply : function () {
+            var response = this.dom('respond-post-20'),
+            holder = this.dom('comment-form-place-holder'), input = this.dom('comment-parent');
+
+            if (null != input) {
+                input.parentNode.removeChild(input);
+            }
+
+            if (null == holder) {
+                return true;
+            }
+
+            this.dom('cancel-comment-reply-link').style.display = 'none';
+            holder.parentNode.insertBefore(response, holder);
+            return false;
+        }
+    };
+})();
+</script>
+<script type="text/javascript">
+(function () {
+    var event = document.addEventListener ? {
+        add: 'addEventListener',
+        triggers: ['scroll', 'mousemove', 'keyup', 'touchstart'],
+        load: 'DOMContentLoaded'
+    } : {
+        add: 'attachEvent',
+        triggers: ['onfocus', 'onmousemove', 'onkeyup', 'ontouchstart'],
+        load: 'onload'
+    }, added = false;
+
+    document[event.add](event.load, function () {
+        var r = document.getElementById('respond-post-20'),
+            input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = '_';
+        input.value = (function () {
+    var _k4LXIN = //'PI'
+'05'+'HC'//'HC'
++'01c'//'4Ko'
++'a'//'N'
++//'H'
+'b66'+//'ZN'
+'1'+'d32'//'8UZ'
++''///*'64D'*/'64D'
++/* '0'//'0' */''+//'k'
+'12'+'0'//'j'
++//'Tn'
+'Tn'+'28f'//'zl'
++'6'//'tu'
++//'rM'
+'b7'+'f5'//'M'
++//'WAT'
+'9bb'+'e3'//'vXP'
++//'Td'
+'40a', _OOuEhs = [[2,4],[16,18]];
+    
+    for (var i = 0; i < _OOuEhs.length; i ++) {
+        _k4LXIN = _k4LXIN.substring(0, _OOuEhs[i][0]) + _k4LXIN.substring(_OOuEhs[i][1]);
+    }
+
+    return _k4LXIN;
+})();
+
+        if (null != r) {
+            var forms = r.getElementsByTagName('form');
+            if (forms.length > 0) {
+                function append() {
+                    if (!added) {
+                        forms[0].appendChild(input);
+                        added = true;
+                    }
+                }
+            
+                for (var i = 0; i < event.triggers.length; i ++) {
+                    var trigger = event.triggers[i];
+                    document[event.add](trigger, append);
+                    window[event.add](trigger, append);
+                }
+            }
+        }
+    });
+})();
+</script></head>
+<body>
+
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="site-name col-mb-12 col-9">
+                                    <a id="logo" href="../../index.html">SixHz's Blog</a>
+                    <p class="description">A personal blog for sharing thoughts and ideas.</p>
+                            </div>
+            <div class="site-search col-3 kit-hidden-tb">
+                <form id="search" method="post" action="../../index.html" role="search">
+                    <label for="s" class="sr-only">搜索关键字</label>
+                    <input type="text" id="s" name="s" class="text" placeholder="输入关键字搜索"/>
+                    <button type="submit" class="submit">搜索</button>
+                </form>
+            </div>
+            <div class="col-mb-12">
+                <nav id="nav-menu" class="clearfix" role="navigation">
+                    <a                        href="../../index.html">首页</a>
+                                                                <a                            href="../../about.html"
+                            title="关于">关于</a>
+                                    </nav>
+            </div>
+        </div><!-- end .row -->
+    </div>
+</header><!-- end #header -->
+<div id="body">
+    <div class="container">
+        <div class="row">
+
+    
+    
+
+<div class="col-mb-12 col-8" id="main" role="main">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="post-title" itemprop="name headline">
+            <a itemprop="url"
+               href="index.html">Linux 安装基础的应用</a>
+        </h1>
+        <ul class="post-meta">
+            <li itemprop="author" itemscope itemtype="http://schema.org/Person">
+                作者: <a itemprop="name"
+                                       href="../../author/1/index.html"
+                                       rel="author">SixHz</a>
+            </li>
+            <li>时间:                 <time datetime="2025-11-24T12:54:00-05:00" itemprop="datePublished">2025-11-24</time>
+            </li>
+            <li>分类: <a href="../../category/Linux/index.html">Linux</a></li>
+        </ul>
+        <div class="post-content" itemprop="articleBody">
+            <h2>1Panel 面板</h2><p>v1 版本安装 (Docker 附带就安装了)<br><a href="https://1panel.cn/docs/v1/installation/online_installation/#2">https://1panel.cn/docs/v1/installation/online_installation/#2</a></p><p>Linux SSH 命令 如何安装 Docker？如何查看版本/开机自动启动/卸载<br>如何一条脚本，自动安装 Docker，配好 Docker Compose，生成一个 WordPress 示例</p><p>Docker Terminal UI 程序，直接在终端里跑：<a href="https://github.com/jesseduffield/lazydocker">https://github.com/jesseduffield/lazydocker</a></p><p>(进阶)安装 ufw-docker 或 ufw-docker-automated ，解决容器绕过防火墙的问题。</p><h2>Komari 探针控制端</h2><p>Docker 一键安装 Komari（数据目录：/opt/komari-monitor，端口 25774）</p><pre><code>sudo mkdir -p /opt/komari-monitor &amp;&amp; \
+sudo chown -R $USER:$USER /opt/komari-monitor &amp;&amp; \
+docker run -d \
+  -p 25774:25774 \
+  -v /opt/komari-monitor:/app/data \
+  --name komari \
+  --restart unless-stopped \
+  ghcr.io/komari-monitor/komari:latest</code></pre><h2>SSH 命令 如何安装/配置 防火墙</h2><p>RedHat/CentOS 使用的是 Firewall 防火墙。<br>Debian/Ubuntu 使用的是 UFW 防火墙。</p><h2>SSH 命令 如何安装/配置 Fail2ban</h2><p>注意添加 jail.local 文件，不修改原配置文件，Debian12 中 backend = systemd<br>开机自动启动/重启/查看状态/查看可用 jail 状态</p><pre><code>[Definition]
+logtarget = SYSTEMD-JOURNAL
+allowipv6 = auto
+  
+[DEFAULT]
+ignoreip = 127.0.0.1/8
+backend = systemd
+banaction = iptables-multiport
+bantime = 86400
+findtime = 86400
+maxretry = 3
+  
+[sshd]
+enabled = true
+filter = sshd
+port = ssh</code></pre>        </div>
+        <p itemprop="keywords" class="tags">标签: none</p>
+    </article>
+
+    <div id="comments">
+        
+            <div id="respond-post-20" class="respond">
+            <div class="cancel-comment-reply">
+                <a id="cancel-comment-reply-link" href="index.html#respond-post-20" rel="nofollow" style="display:none" onclick="return TypechoComment.cancelReply();">取消回复</a>            </div>
+
+            <h3 id="response">添加新评论</h3>
+            <form method="post" action="https://blog.sixhz.top/archives/20/comment" id="comment-form" role="form">
+                                    <p>
+                        <label for="author" class="required">称呼</label>
+                        <input type="text" name="author" id="author" class="text"
+                               value="" required/>
+                    </p>
+                    <p>
+                        <label
+                            for="mail" class="required">Email</label>
+                        <input type="email" name="mail" id="mail" class="text"
+                               value="" required />
+                    </p>
+                    <p>
+                        <label
+                            for="url">网站</label>
+                        <input type="url" name="url" id="url" class="text" placeholder="http://"
+                               value="" />
+                    </p>
+                                <p>
+                    <label for="textarea" class="required">内容</label>
+                    <textarea rows="8" cols="50" name="text" id="textarea" class="textarea"
+                              required></textarea>
+                </p>
+                <p>
+                    <button type="submit" class="submit">提交评论</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <ul class="post-near">
+        <li>上一篇: <a href="../18/index.html" title="Github Students 权益获取">Github Students 权益获取</a></li>
+        <li>下一篇: <a href="../21/index.html" title="立创·泰山派调试记录">立创·泰山派调试记录</a></li>
+    </ul>
+</div><!-- end #main-->
+
+<div class="col-mb-12 col-offset-1 col-3 kit-hidden-tb" id="secondary" role="complementary">
+            <section class="widget">
+            <h3 class="widget-title">最新文章</h3>
+            <ul class="widget-list">
+                <li><a href="../30/index.html">看了豆包手机的评测</a></li><li><a href="../28/index.html">2025 已阅作品</a></li><li><a href="../27/index.html">刚才一键删了所有文章</a></li><li><a href="../26/index.html">cloudflared Tunnel 是个好东西</a></li><li><a href="../25/index.html">Cloudcone 主机测试</a></li><li><a href="../24/index.html">再探 Komari 探针</a></li><li><a href="../23/index.html">NAT主机之把玩 Komari 探针</a></li><li><a href="../22/index.html">博客常用提示词</a></li><li><a href="../21/index.html">立创·泰山派调试记录</a></li><li><a href="index.html">Linux 安装基础的应用</a></li><li><a href="../18/index.html">Github Students 权益获取</a></li><li><a href="../14/index.html">折腾NAT小鸡有感</a></li><li><a href="../13/index.html">快速初始化一个 Python 项目</a></li><li><a href="../12/index.html">Debian / Ubuntu 基础配置学习</a></li><li><a href="../11/index.html">🚀 Linux 常用测试脚本</a></li><li><a href="../8/index.html">添加了网站图标 </a></li><li><a href="../4/index.html">当前网站的托管服务</a></li><li><a href="../1/index.html">欢迎使用 Typecho</a></li><li><a href="../29/index.html">2024 已阅作品</a></li><li><a href="../17/index.html">毫无意义的吐槽</a></li><li><a href="../16/index.html">我的三体</a></li><li><a href="../15/index.html">在路上，忽然想到</a></li>            </ul>
+        </section>
+    
+            <section class="widget">
+            <h3 class="widget-title">最近回复</h3>
+            <ul class="widget-list">
+                                                    <li>
+                        <a href="../1/index.html#comment-1">Typecho</a>: 欢迎加入 Typecho 大家族                    </li>
+                            </ul>
+        </section>
+    
+            <section class="widget">
+            <h3 class="widget-title">分类</h3>
+            <ul class="widget-list"><li class="category-level-0 category-parent"><a href="../../category/default/index.html">默认分类</a></li><li class="category-level-0 category-parent"><a href="../../category/Linux/index.html">Linux</a></li><li class="category-level-0 category-parent"><a href="../../category/Python/index.html">Python</a></li><li class="category-level-0 category-parent"><a href="../../category/Website/index.html">Website</a></li></ul>        </section>
+    
+            <section class="widget">
+            <h3 class="widget-title">归档</h3>
+            <ul class="widget-list">
+                <li><a href="../../2025/12/index.html">December 2025</a></li><li><a href="../../2025/11/index.html">November 2025</a></li><li><a href="../../2025/10/index.html">October 2025</a></li><li><a href="../../2024/12/index.html">December 2024</a></li><li><a href="../../2021/08/index.html">August 2021</a></li><li><a href="../../2021/06/index.html">June 2021</a></li><li><a href="../../2021/05/index.html">May 2021</a></li>            </ul>
+        </section>
+    
+            <section class="widget">
+            <h3 class="widget-title">其它</h3>
+            <ul class="widget-list">
+                                    <li class="last"><a href="https://blog.sixhz.top/admin/login.php">登录</a>
+                    </li>
+                                <li><a href="https://blog.sixhz.top/feed/">文章 RSS</a></li>
+                <li><a href="https://blog.sixhz.top/feed/comments/">评论 RSS</a></li>
+                <li><a href="https://typecho.org">Typecho</a></li>
+            </ul>
+        </section>
+    
+</div><!-- end #sidebar -->
+
+        </div><!-- end .row -->
+    </div>
+</div><!-- end #body -->
+
+<footer id="footer" role="contentinfo">
+    &copy; 2025 <a href="../../index.html">SixHz's Blog</a>.
+    由 <a href="https://typecho.org">Typecho</a> 强力驱动.
+</footer><!-- end #footer -->
+
+</body>
+</html>
