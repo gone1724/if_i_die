@@ -1,0 +1,17 @@
+[project]
+name = "if-i-die"
+version = "0.1.0"
+description = "Typecho blog mirror utility managed by uv"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+mirror = "mirror:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+*** End Patch
