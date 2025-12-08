@@ -11,9 +11,9 @@
     <link rel="icon" href="https://academic.sixhz.top/images/favicon/favicon.ico" type="image/x-icon">
 
     <!-- 使用url函数转换相关路径 -->
-    <link rel="stylesheet" href="https://blog.sixhz.top/usr/themes/default/normalize.css">
-    <link rel="stylesheet" href="https://blog.sixhz.top/usr/themes/default/grid.css">
-    <link rel="stylesheet" href="https://blog.sixhz.top/usr/themes/default/style.css">
+    <link rel="stylesheet" href="../../usr/themes/default/normalize.css">
+    <link rel="stylesheet" href="../../usr/themes/default/grid.css">
+    <link rel="stylesheet" href="../../usr/themes/default/style.css">
 
     <!-- 通过自有函数输出HTML头部信息 -->
     <meta name="description" content="控制端自监控进过测试，控制端是可以做到自己监控自己的。二进制部署后，用作控制端的 NAT 小鸡的 64MB 内存也没有爆。给板卡扎针 (Komari Agent)目前，我的 Linux 板卡已经..." />
@@ -115,32 +115,31 @@
         input.type = 'hidden';
         input.name = '_';
         input.value = (function () {
-    var _6SLCF = '3'//'pjT'
-+'a'//'z'
-+//'Ijr'
-'a6'+//'i'
-'d'+//'re'
-'b4'+'a6'//'t3'
-+''///*'JJ'*/'JJ'
-+'9c0'//'M'
-+'db'//'pex'
-+'ea'//'P'
-+//'j'
-'61'+'7a'//'UQJ'
-+'ef0'//'z'
-+//'q'
-'3'+'n'//'n'
-+//'JXe'
-'1e'+'dc'//'806'
-+'f5'//'S'
-+'41'//'Xl2'
-, _kYMeM8J = [[24,25]];
+    var _O7S = //'0D'
+'3'+'aa6'//'nE'
++'db4'//'mJ'
++//'W9'
+'a'+//'hmk'
+'hmk'+//'G1'
+'6'+/* '7ve'//'7ve' */''+//'P'
+'9c0'+'d'//'Zl'
++'bea'//'T5'
++//'tc'
+'61'+//'ic'
+'7'+'aef'//'h0J'
++//'MbZ'
+'0'+'31e'//'lZ'
++/* 'I'//'I' */''+//'mKD'
+'dcf'+//'dMd'
+'54'+//'d'
+'d'+//'Wt'
+'1', _gKmsbO = [[8,11],[31,32]];
     
-    for (var i = 0; i < _kYMeM8J.length; i ++) {
-        _6SLCF = _6SLCF.substring(0, _kYMeM8J[i][0]) + _6SLCF.substring(_kYMeM8J[i][1]);
+    for (var i = 0; i < _gKmsbO.length; i ++) {
+        _O7S = _O7S.substring(0, _gKmsbO[i][0]) + _O7S.substring(_gKmsbO[i][1]);
     }
 
-    return _6SLCF;
+    return _O7S;
 })();
 
         if (null != r) {
@@ -169,11 +168,11 @@
     <div class="container">
         <div class="row">
             <div class="site-name col-mb-12 col-9">
-                                    <a id="logo" href="https://blog.sixhz.top/">SixHz's Blog</a>
+                                    <a id="logo" href="../../index.html">SixHz's Blog</a>
                     <p class="description">A personal blog for sharing thoughts and ideas.</p>
                             </div>
             <div class="site-search col-3 kit-hidden-tb">
-                <form id="search" method="post" action="https://blog.sixhz.top/" role="search">
+                <form id="search" method="post" action="../../index.html" role="search">
                     <label for="s" class="sr-only">搜索关键字</label>
                     <input type="text" id="s" name="s" class="text" placeholder="输入关键字搜索"/>
                     <button type="submit" class="submit">搜索</button>
@@ -181,8 +180,8 @@
             </div>
             <div class="col-mb-12">
                 <nav id="nav-menu" class="clearfix" role="navigation">
-                    <a                        href="https://blog.sixhz.top/">首页</a>
-                                                                <a                            href="https://blog.sixhz.top/about.html"
+                    <a                        href="../../index.html">首页</a>
+                                                                <a                            href="../../about.html"
                             title="关于">关于</a>
                                     </nav>
             </div>
@@ -200,17 +199,17 @@
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <h1 class="post-title" itemprop="name headline">
             <a itemprop="url"
-               href="https://blog.sixhz.top/archives/24/">再探 Komari 探针</a>
+               href="index.html">再探 Komari 探针</a>
         </h1>
         <ul class="post-meta">
             <li itemprop="author" itemscope itemtype="http://schema.org/Person">
                 作者: <a itemprop="name"
-                                       href="https://blog.sixhz.top/author/1/"
+                                       href="../../author/1/index.html"
                                        rel="author">SixHz</a>
             </li>
             <li>时间:                 <time datetime="2025-11-29T11:49:00-05:00" itemprop="datePublished">2025-11-29</time>
             </li>
-            <li>分类: <a href="https://blog.sixhz.top/category/Linux/">Linux</a>,<a href="https://blog.sixhz.top/category/Website/">Website</a></li>
+            <li>分类: <a href="../../category/Linux/index.html">Linux</a>,<a href="../../category/Website/index.html">Website</a></li>
         </ul>
         <div class="post-content" itemprop="articleBody">
             <h2>控制端自监控</h2><p>进过测试，控制端是可以做到自己监控自己的。二进制部署后，用作控制端的 NAT 小鸡的 64MB 内存也没有爆。</p><h2>给板卡扎针 (Komari Agent)</h2><p>目前，我的 Linux 板卡已经连上路由器，也就是常说的“已连上 Wi-Fi”了。</p><p>此时板卡处于一种典型的 <strong>“只能出不能入”（Outbound-only）</strong> 网络环境：允许主机主动连接外部网络 (Outbound)，但不允许外部直接访问内部主机（Inbound 被阻断）。</p><p>在这种前提下，依然成功让 Komari Agent “扎针”并保持在线，这一点让我感到非常意外，非常有意思。</p><h2>Komari Agent 通信机制</h2><p>其详细原理可见 <a href="https://komari-document.pages.dev/dev/agent.html">官方文档 - Komari Agent 信息上报与事件处理文档</a>。</p><p>在我的场景中，板卡是 <strong>Linux 系统</strong>，并且 <strong>可以正常出站访问公网</strong>。Komari Agent 启动后会：</p><ul><li>主动向 Komari 服务端发起 <strong>HTTPS / WebSocket</strong> 连接；</li><li>启动时先通过 HTTP 上报一次基础信息（例如 CPU、内存、磁盘等静态或缓变数据）；</li><li>之后通过 WebSocket 以固定间隔持续推送实时监控数据（CPU 使用率、内存占用等）；</li><li>同时在这条 WebSocket 连接上接收来自服务端的远程命令等事件，在本地执行后再将结果回传。</li></ul><p>整个过程中，所有连接都是由 <strong>“板卡 → 公网 → Komari 主控”</strong> 主动发起的：内网侧无需开放任何端口，路由器也不需要做端口映射，更不要求公网能够反向访问板卡 IP。</p><h2>Agent 自动发现</h2><p>其详细教程可见 <a href="https://komari-document.pages.dev/install/agent-ad.html">官方文档 - Agent 自动发现</a>。</p><pre><code>bash &lt;(curl -sL https://raw.githubusercontent.com/komari-monitor/komari-agent/refs/heads/main/install.sh) -e https://example.com --auto-discovery &lt;AD Key&gt; --install-ghproxy https://ghfast.top/</code></pre>        </div>
@@ -221,7 +220,7 @@
         
             <div id="respond-post-24" class="respond">
             <div class="cancel-comment-reply">
-                <a id="cancel-comment-reply-link" href="https://blog.sixhz.top/archives/24/#respond-post-24" rel="nofollow" style="display:none" onclick="return TypechoComment.cancelReply();">取消回复</a>            </div>
+                <a id="cancel-comment-reply-link" href="index.html#respond-post-24" rel="nofollow" style="display:none" onclick="return TypechoComment.cancelReply();">取消回复</a>            </div>
 
             <h3 id="response">添加新评论</h3>
             <form method="post" action="https://blog.sixhz.top/archives/24/comment" id="comment-form" role="form">
@@ -255,8 +254,8 @@
     </div>
 
     <ul class="post-near">
-        <li>上一篇: <a href="https://blog.sixhz.top/archives/23/" title="NAT主机之把玩 Komari 探针">NAT主机之把玩 Komari 探针</a></li>
-        <li>下一篇: <a href="https://blog.sixhz.top/archives/25/" title="Cloudcone 主机测试">Cloudcone 主机测试</a></li>
+        <li>上一篇: <a href="../23/index.html" title="NAT主机之把玩 Komari 探针">NAT主机之把玩 Komari 探针</a></li>
+        <li>下一篇: <a href="../25/index.html" title="Cloudcone 主机测试">Cloudcone 主机测试</a></li>
     </ul>
 </div><!-- end #main-->
 
@@ -264,25 +263,25 @@
             <section class="widget">
             <h3 class="widget-title">最新文章</h3>
             <ul class="widget-list">
-                <li><a href="https://blog.sixhz.top/archives/30/">看了豆包手机的评测</a></li><li><a href="https://blog.sixhz.top/archives/28/">2025 已阅作品</a></li><li><a href="https://blog.sixhz.top/archives/27/">刚才一键删了所有文章</a></li><li><a href="https://blog.sixhz.top/archives/26/">cloudflared Tunnel 是个好东西</a></li><li><a href="https://blog.sixhz.top/archives/25/">Cloudcone 主机测试</a></li><li><a href="https://blog.sixhz.top/archives/24/">再探 Komari 探针</a></li><li><a href="https://blog.sixhz.top/archives/23/">NAT主机之把玩 Komari 探针</a></li><li><a href="https://blog.sixhz.top/archives/22/">博客常用提示词</a></li><li><a href="https://blog.sixhz.top/archives/21/">立创·泰山派调试记录</a></li><li><a href="https://blog.sixhz.top/archives/20/">Linux 安装基础的应用</a></li><li><a href="https://blog.sixhz.top/archives/18/">Github Students 权益获取</a></li><li><a href="https://blog.sixhz.top/archives/14/">折腾NAT小鸡有感</a></li><li><a href="https://blog.sixhz.top/archives/13/">快速初始化一个 Python 项目</a></li><li><a href="https://blog.sixhz.top/archives/12/">Debian / Ubuntu 基础配置学习</a></li><li><a href="https://blog.sixhz.top/archives/11/">🚀 Linux 常用测试脚本</a></li><li><a href="https://blog.sixhz.top/archives/8/">添加了网站图标 </a></li><li><a href="https://blog.sixhz.top/archives/4/">当前网站的托管服务</a></li><li><a href="https://blog.sixhz.top/archives/1/">欢迎使用 Typecho</a></li><li><a href="https://blog.sixhz.top/archives/29/">2024 已阅作品</a></li><li><a href="https://blog.sixhz.top/archives/17/">毫无意义的吐槽</a></li><li><a href="https://blog.sixhz.top/archives/16/">我的三体</a></li><li><a href="https://blog.sixhz.top/archives/15/">在路上，忽然想到</a></li>            </ul>
+                <li><a href="../30/index.html">看了豆包手机的评测</a></li><li><a href="../28/index.html">2025 已阅作品</a></li><li><a href="../27/index.html">刚才一键删了所有文章</a></li><li><a href="../26/index.html">cloudflared Tunnel 是个好东西</a></li><li><a href="../25/index.html">Cloudcone 主机测试</a></li><li><a href="index.html">再探 Komari 探针</a></li><li><a href="../23/index.html">NAT主机之把玩 Komari 探针</a></li><li><a href="../22/index.html">博客常用提示词</a></li><li><a href="../21/index.html">立创·泰山派调试记录</a></li><li><a href="../20/index.html">Linux 安装基础的应用</a></li><li><a href="../18/index.html">Github Students 权益获取</a></li><li><a href="../14/index.html">折腾NAT小鸡有感</a></li><li><a href="../13/index.html">快速初始化一个 Python 项目</a></li><li><a href="../12/index.html">Debian / Ubuntu 基础配置学习</a></li><li><a href="../11/index.html">🚀 Linux 常用测试脚本</a></li><li><a href="../8/index.html">添加了网站图标 </a></li><li><a href="../4/index.html">当前网站的托管服务</a></li><li><a href="../1/index.html">欢迎使用 Typecho</a></li><li><a href="../29/index.html">2024 已阅作品</a></li><li><a href="../17/index.html">毫无意义的吐槽</a></li><li><a href="../16/index.html">我的三体</a></li><li><a href="../15/index.html">在路上，忽然想到</a></li>            </ul>
         </section>
     
             <section class="widget">
             <h3 class="widget-title">最近回复</h3>
             <ul class="widget-list">
                                                     <li>
-                        <a href="https://blog.sixhz.top/archives/1/#comment-1">Typecho</a>: 欢迎加入 Typecho 大家族                    </li>
+                        <a href="../1/index.html#comment-1">Typecho</a>: 欢迎加入 Typecho 大家族                    </li>
                             </ul>
         </section>
     
             <section class="widget">
             <h3 class="widget-title">分类</h3>
-            <ul class="widget-list"><li class="category-level-0 category-parent"><a href="https://blog.sixhz.top/category/default/">默认分类</a></li><li class="category-level-0 category-parent"><a href="https://blog.sixhz.top/category/Linux/">Linux</a></li><li class="category-level-0 category-parent"><a href="https://blog.sixhz.top/category/Python/">Python</a></li><li class="category-level-0 category-parent"><a href="https://blog.sixhz.top/category/Website/">Website</a></li></ul>        </section>
+            <ul class="widget-list"><li class="category-level-0 category-parent"><a href="../../category/default/index.html">默认分类</a></li><li class="category-level-0 category-parent"><a href="../../category/Linux/index.html">Linux</a></li><li class="category-level-0 category-parent"><a href="../../category/Python/index.html">Python</a></li><li class="category-level-0 category-parent"><a href="../../category/Website/index.html">Website</a></li></ul>        </section>
     
             <section class="widget">
             <h3 class="widget-title">归档</h3>
             <ul class="widget-list">
-                <li><a href="https://blog.sixhz.top/2025/12/">December 2025</a></li><li><a href="https://blog.sixhz.top/2025/11/">November 2025</a></li><li><a href="https://blog.sixhz.top/2025/10/">October 2025</a></li><li><a href="https://blog.sixhz.top/2024/12/">December 2024</a></li><li><a href="https://blog.sixhz.top/2021/08/">August 2021</a></li><li><a href="https://blog.sixhz.top/2021/06/">June 2021</a></li><li><a href="https://blog.sixhz.top/2021/05/">May 2021</a></li>            </ul>
+                <li><a href="../../2025/12/index.html">December 2025</a></li><li><a href="../../2025/11/index.html">November 2025</a></li><li><a href="../../2025/10/index.html">October 2025</a></li><li><a href="../../2024/12/index.html">December 2024</a></li><li><a href="../../2021/08/index.html">August 2021</a></li><li><a href="../../2021/06/index.html">June 2021</a></li><li><a href="../../2021/05/index.html">May 2021</a></li>            </ul>
         </section>
     
             <section class="widget">
@@ -303,7 +302,7 @@
 </div><!-- end #body -->
 
 <footer id="footer" role="contentinfo">
-    &copy; 2025 <a href="https://blog.sixhz.top/">SixHz's Blog</a>.
+    &copy; 2025 <a href="../../index.html">SixHz's Blog</a>.
     由 <a href="https://typecho.org">Typecho</a> 强力驱动.
 </footer><!-- end #footer -->
 

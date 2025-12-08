@@ -13,7 +13,10 @@ import platform
 import shutil
 import subprocess
 import sys
+import re
+import os
 from pathlib import Path
+from urllib.parse import urlsplit
 from typing import Iterable, List
 
 
@@ -113,6 +116,46 @@ def stream_process_output(command: Iterable[str]) -> int:
     return return_code
 
 
+def rewrite_links_to_local(output_dir: Path, base_url: str) -> None:
+    """Post-process downloaded files to point base-domain assets to local copies."""
+    parsed = urlsplit(base_url)
+    host = parsed.netloc
+    if not host:
+        return
+    prefixes = {f"{scheme}://{host}" for scheme in ("http", "https")}
+    prefixes.add(f"//{host}")
+    pattern = re.compile(
+        r"(?P<prefix>" + "|".join(re.escape(p) for p in prefixes) + r")(?P<path>/[^\s\"'>)]+)"
+    )
+    for file_path in output_dir.rglob("*"):
+        if file_path.suffix.lower() not in {".html", ".htm", ".css", ".js"}:
+            continue
+        try:
+            original = file_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        changed = False
+
+        def _replace(match: re.Match[str]) -> str:
+            nonlocal changed
+            url_path = match.group("path")
+            local_target = (output_dir / url_path.lstrip("/")).resolve()
+            if local_target.exists():
+                relative = Path(
+                    os.path.relpath(local_target, start=file_path.parent.resolve())
+                )
+                changed = True
+                return str(relative).replace("\\", "/")
+            return match.group(0)
+
+        rewritten = pattern.sub(_replace, original)
+        if changed:
+            try:
+                file_path.write_text(rewritten, encoding="utf-8")
+            except OSError:
+                pass
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Mirror https://blog.sixhz.top/ into a local static site directory."
@@ -170,6 +213,10 @@ def main(argv: list[str] | None = None) -> int:
     return_code = stream_process_output(command)
     if return_code != 0:
         print(f"wget exited with code {return_code}", file=sys.stderr)
+        return return_code
+
+    # Post-process links to ensure assets point to local copies for offline deploy.
+    rewrite_links_to_local(output_dir, args.url)
     return return_code
 
 
