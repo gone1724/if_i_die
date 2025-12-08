@@ -9,15 +9,18 @@ before each run.
 from __future__ import annotations
 
 import argparse
+import hashlib
+import os
 import platform
+import re
 import shutil
 import subprocess
 import sys
-import re
-import os
 from pathlib import Path
-from urllib.parse import urlsplit
 from typing import Iterable, List
+from urllib.error import URLError
+from urllib.parse import urlsplit
+from urllib.request import urlopen
 
 
 DEFAULT_URL = "https://blog.sixhz.top/"
@@ -156,6 +159,72 @@ def rewrite_links_to_local(output_dir: Path, base_url: str) -> None:
                 pass
 
 
+def _hash_filename(url: str, default_ext: str = ".bin") -> str:
+    parsed = urlsplit(url)
+    ext = Path(parsed.path).suffix or default_ext
+    digest = hashlib.sha1(url.encode("utf-8", "ignore")).hexdigest()
+    return f"{digest}{ext}"
+
+
+def download_external_images(output_dir: Path, base_url: str) -> None:
+    """Download external img/src assets and rewrite HTML to local relative paths."""
+    base_host = urlsplit(base_url).netloc
+    external_dir = output_dir / "external_assets"
+    external_dir.mkdir(parents=True, exist_ok=True)
+
+    img_pattern = re.compile(
+        r'(<img[^>]+src=["\'])(?P<src>https?:\/\/[^"\']+)(["\'])',
+        flags=re.IGNORECASE,
+    )
+    replacements: dict[str, Path] = {}
+    html_files = [
+        p for p in output_dir.rglob("*") if p.suffix.lower() in {".html", ".htm"}
+    ]
+
+    for file_path in html_files:
+        try:
+            content = file_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+
+        changed = False
+
+        def _handle_match(match: re.Match[str]) -> str:
+            nonlocal changed
+            src_url = match.group("src")
+            host = urlsplit(src_url).netloc
+            if not host or host == base_host:
+                return match.group(0)
+
+            if src_url not in replacements:
+                filename = _hash_filename(src_url, default_ext=".img")
+                dest_path = external_dir / filename
+                if not dest_path.exists():
+                    try:
+                        with urlopen(src_url, timeout=20) as resp, open(
+                            dest_path, "wb"
+                        ) as out_f:
+                            shutil.copyfileobj(resp, out_f)
+                    except (URLError, OSError):
+                        return match.group(0)
+                replacements[src_url] = dest_path
+
+            dest_path = replacements[src_url]
+            relative = Path(
+                os.path.relpath(dest_path.resolve(), start=file_path.parent.resolve())
+            )
+            changed = True
+            new_src = str(relative).replace("\\", "/")
+            return f"{match.group(1)}{new_src}{match.group(3)}"
+
+        rewritten = img_pattern.sub(_handle_match, content)
+        if changed:
+            try:
+                file_path.write_text(rewritten, encoding="utf-8")
+            except OSError:
+                pass
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Mirror https://blog.sixhz.top/ into a local static site directory."
@@ -217,6 +286,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # Post-process links to ensure assets point to local copies for offline deploy.
     rewrite_links_to_local(output_dir, args.url)
+    download_external_images(output_dir, args.url)
     return return_code
 
 
