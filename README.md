@@ -1,6 +1,5 @@
 > 🌱 如果有一天你不在了，你希望你的博客会怎样？我走后，我在互联网上留下的东西会怎样？
 >
->
 > 这是一个关于纪念、延续、与被看见的问题。
 
 ## 这是什么
@@ -42,9 +41,11 @@ python mirror.py --spider
 python mirror.py --url https://example.com/ --output-dir my_site
 ```
 
-## 其他
+## 许可证 | License
 
-wget 选择：Windows 优先使用仓库内 `tools/mingw64/bin/wget.exe`；其他系统优先系统 wget，找不到再用仓库内的。
+- 本项目遵循 GNU GPL v3.0 许可证，您可以按许可证条款复制、分发和修改本项目。
+- This project is licensed under the GNU GPL v3.0; you may copy, distribute, and modify it under the terms of that license.
+- wget 选择：Windows 优先使用仓库内 `tools/mingw64/bin/wget.exe`；其他系统优先系统 wget，找不到再用仓库内的。
 
-- 本项目包含 wget.exe（GNU Wget，GPLv3 许可证） This project includes wget.exe (GNU Wget, GPLv3).
-- 源代码可在以下地址获取 Source code available at: https://ftp.gnu.org/gnu/wget/
+  - 本项目包含 wget.exe（GNU Wget，GPLv3 许可证） This project includes wget.exe (GNU Wget, GPLv3).
+  - 源代码可在以下地址获取 Source code available at: [https://ftp.gnu.org/gnu/wget/](https://ftp.gnu.org/gnu/wget/)
