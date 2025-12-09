@@ -39,6 +39,10 @@ uv run python mirror.py --spider
 uv run python mirror.py --url https://example.com/ --output-dir my_site
 ```
 
+## 自动任务
+
+可以参考`run_mirror.sh`，将本项目部署在服务器上，以实现自动镜像任务。
+
 ## 许可证 | License
 
 - 本项目遵循 GNU GPL v3.0 许可证，您可以按许可证条款复制、分发和修改本项目。
