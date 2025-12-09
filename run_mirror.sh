@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# 确保能找到 uv 等命令
+export PATH="/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
 # 1. 到仓库目录
 cd "$(dirname "$0")"
 
