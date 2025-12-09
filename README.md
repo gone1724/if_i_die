@@ -1,4 +1,4 @@
-> 🌱 如果有一天你不在了，你希望你的博客会怎样？我走后，我在互联网上留下的东西会怎样？
+> 🌱 如果有一天你不在了，你希望你的博客会怎样？在互联网上留下的东西会怎样？
 >
 > 这是一个关于纪念、延续、与被看见的问题。
 
@@ -15,30 +15,30 @@
 ## 使用指南
 
 * 环境：Python 3.9+。
-* 推荐安装和使用 uv
+* 推荐安装和使用 uv 管理 Python 项目工程
 
 ```bash
 pip install uv
+uv run python mirror.py
 ```
 
-* 运行：如果装了 uv，直接 `uv run python mirror.py`，否则 `python mirror.py`。
 * 清理输出（默认清空）：
 
 ```bash
-python mirror.py                  # 清空后抓取
-python mirror.py --no-clean       # 不清空抓取
+uv run python mirror.py                  # 清空后抓取
+uv run python mirror.py --no-clean       # 不清空抓取
 ```
 
 * 试跑（只检查不下载）：
 
 ```bash
-python mirror.py --spider
+uv run python mirror.py --spider
 ```
 
 * 自定义目标站点和输出目录，用于抓取其他博客：
 
 ```bash
-python mirror.py --url https://example.com/ --output-dir my_site
+uv run python mirror.py --url https://example.com/ --output-dir my_site
 ```
 
 ## 许可证 | License
