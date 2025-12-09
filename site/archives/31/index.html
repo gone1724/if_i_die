@@ -115,31 +115,31 @@
         input.type = 'hidden';
         input.name = '_';
         input.value = (function () {
-    var _vWlMa = 'e29'//'la'
-+//'X8t'
-'X8t'+'Qs'//'Qs'
-+//'i'
-'711'+'0d'//'B'
-+'8'//'W'
-+/* 'mpA'//'mpA' */''+//'xW'
-'xW'+'ced'//'2y'
-+//'5Z7'
-'5b6'+''///*'U'*/'U'
-+//'s'
-'fe'+'e'//'2p'
-+//'qW'
-'2'+'921'//'L'
-+'a85'//'Ku'
-+//'h9'
-'f7e'+'c49'//'bK'
-+/* '6'//'6' */''+//'l'
-'7', _ChWVH = [[3,6],[3,5],[9,11]];
+    var _IrfT1to = 'e29'//'Z3'
++/* 'XiZ'//'XiZ' */''+//'z'
+'71'+//'3Af'
+'10d'+'8'//'u'
++//'FZ'
+'FZ'+'ced'//'J'
++'5b'//'AM'
++//'Lvf'
+'6fe'+'e'//'r'
++'29'//'ZNA'
++''///*'z'*/'z'
++'2'//'tDw'
++'1a'//'kAv'
++//'Un6'
+'85'+//'y'
+'f7'+/* 'D'//'D' */''+/* 'RAp'//'RAp' */''+'e'//'6C'
++//'l'
+'c49'+//'Kb'
+'7', _GKYDv7n = [[9,11]];
     
-    for (var i = 0; i < _ChWVH.length; i ++) {
-        _vWlMa = _vWlMa.substring(0, _ChWVH[i][0]) + _vWlMa.substring(_ChWVH[i][1]);
+    for (var i = 0; i < _GKYDv7n.length; i ++) {
+        _IrfT1to = _IrfT1to.substring(0, _GKYDv7n[i][0]) + _IrfT1to.substring(_GKYDv7n[i][1]);
     }
 
-    return _vWlMa;
+    return _IrfT1to;
 })();
 
         if (null != r) {
@@ -212,7 +212,7 @@
             <li>分类: <a href="../../category/default/index.html">默认分类</a></li>
         </ul>
         <div class="post-content" itemprop="articleBody">
-            <blockquote>想到一个问题：如果有一天我不再更新博客，甚至不再使用原本的服务器，这些博客内容会怎样？<br>我想让它们继续被看见，也想让它们独立于服务器依赖而存在。</blockquote><p>于是就有了这个小项目 —— 一个用 <strong>Python + wget</strong> 做的极简博客镜像工具，可以把你的 Typecho（或其他兼容的博客）抓成一套完整的、可直接部署的静态网站。</p><p><a href="https://github.com/gone1724/if_i_die">https://github.com/gone1724/if_i_die</a></p><h2>✨ 它能做什么？</h2><ul><li>自动抓取博客所有公开页面（文章 / 分类 / 归档 / 主题资源等）。</li><li>跳过后台、登录、评论提交等敏感或不必要的路径。</li><li>抓取后会<strong>重写所有站内链接为本地相对路径</strong>，确保离线可用。</li><li>针对<code>img src</code>的<strong>图片类资源</strong>也会保存并重写相对链接，确保离线可用。</li><li>自动下载外链图片，减少外部依赖。</li><li>输出目录 <code>./site/</code> 可直接推送到 <strong>GitHub Pages / Cloudflare Pages</strong>。</li></ul><p>换句话说：<strong>你的博客在任何地方都能继续「活着」。</strong></p><h2>🛠️ 怎么用？</h2><p>环境需求：Python 3.9+，推荐用 <code>uv</code> 管理项目。</p><pre><code class="lang-bash">pip install uv
+            <blockquote>想到一个问题：如果有一天我不再更新博客，甚至不再使用原本的服务器，这些博客内容会怎样？<br>我想让它们继续被看见，也想让它们独立于服务器依赖而存在。</blockquote><p>于是就有了这个小项目 —— 一个用 Python + wget 做的极简博客镜像工具，可以把你的 Typecho（或其他兼容的博客）抓成一套完整的、可直接部署的静态网站。</p><p><a href="https://github.com/gone1724/if_i_die">https://github.com/gone1724/if_i_die</a></p><h2>✨ 它能做什么？</h2><ul><li>自动抓取博客所有公开页面（文章 / 分类 / 归档 / 主题资源等）。</li><li>跳过后台、登录、评论提交等敏感或不必要的路径。</li><li>抓取后会重写所有站内链接为本地相对路径，确保离线可用。</li><li>针对<code>img src</code>的图片类资源也会保存并重写相对链接，确保离线可用。</li><li>自动下载外链图片，减少外部依赖。</li><li>输出目录 <code>./site/</code> 可直接推送到 GitHub Pages / Cloudflare Pages。</li></ul><p>换句话说：<strong>你的博客在任何地方都能继续「活着」。</strong></p><h2>🛠️ 怎么用？</h2><p>环境需求：Python 3.9+，推荐用 <code>uv</code> 管理项目。</p><pre><code class="lang-bash">pip install uv
 uv run python mirror.py</code></pre><p>常用命令：</p><pre><code class="lang-bash">uv run python mirror.py          # 默认清空输出后抓取
 uv run python mirror.py --no-clean   # 不清空目录，增量抓取
 uv run python mirror.py --spider     # 试跑模式，仅检查链接
@@ -267,7 +267,7 @@ uv run python mirror.py --url https://example.com/ --output-dir my_site</code></
             <section class="widget">
             <h3 class="widget-title">最新文章</h3>
             <ul class="widget-list">
-                <li><a href="index.html">「博客镜像器」把 Typecho 博客抓成可部署的静态站</a></li><li><a href="../30/index.html">看了豆包手机的评测</a></li><li><a href="../28/index.html">2025 已阅作品</a></li><li><a href="../27/index.html">刚才一键删了所有文章</a></li><li><a href="../26/index.html">cloudflared Tunnel 是个好东西</a></li><li><a href="../25/index.html">Cloudcone 主机测试</a></li><li><a href="../24/index.html">再探 Komari 探针</a></li><li><a href="../23/index.html">NAT主机之把玩 Komari 探针</a></li><li><a href="../22/index.html">博客常用提示词</a></li><li><a href="../21/index.html">立创·泰山派调试记录</a></li><li><a href="../20/index.html">Linux 安装基础的应用</a></li><li><a href="../18/index.html">Github Students 权益获取</a></li><li><a href="../14/index.html">折腾NAT小鸡有感</a></li><li><a href="../13/index.html">快速初始化一个 Python 项目</a></li><li><a href="../12/index.html">Debian / Ubuntu 基础配置学习</a></li><li><a href="../11/index.html">🚀 Linux 常用测试脚本</a></li><li><a href="../8/index.html">添加了网站图标 </a></li><li><a href="../4/index.html">当前网站的托管服务</a></li><li><a href="../1/index.html">欢迎使用 Typecho</a></li><li><a href="../29/index.html">2024 已阅作品</a></li><li><a href="../17/index.html">毫无意义的吐槽</a></li><li><a href="../16/index.html">我的三体</a></li><li><a href="../15/index.html">在路上，忽然想到</a></li>            </ul>
+                <li><a href="index.html">「博客镜像器」把 Typecho 博客抓成可部署的静态站</a></li><li><a href="../30/index.html">看了豆包手机的评测</a></li><li><a href="../28/index.html">2025 已阅作品</a></li><li><a href="../27/index.html">刚才一键删了所有文章</a></li><li><a href="../26/index.html">cloudflared Tunnel 是个好东西</a></li><li><a href="../25/index.html">Cloudcone 主机测试</a></li><li><a href="../24/index.html">再探 Komari 探针</a></li><li><a href="../23/index.html">NAT主机之把玩 Komari 探针</a></li><li><a href="../22/index.html">博客常用提示词</a></li><li><a href="../21/index.html">立创·泰山派调试记录</a></li><li><a href="../20/index.html">Linux 安装基础的应用</a></li><li><a href="../18/index.html">Github Students 权益获取</a></li><li><a href="../14/index.html">折腾NAT小鸡有感</a></li><li><a href="../13/index.html">快速初始化一个 Python 项目</a></li><li><a href="../12/index.html">Debian / Ubuntu 基础配置学习</a></li><li><a href="../11/index.html">🚀 Linux 常用测试脚本</a></li><li><a href="../8/index.html">添加了网站图标 </a></li><li><a href="../4/index.html">当前网站的托管服务</a></li><li><a href="../3/index.html">学术主页链接</a></li><li><a href="../1/index.html">欢迎使用 Typecho</a></li><li><a href="../29/index.html">2024 已阅作品</a></li><li><a href="../17/index.html">毫无意义的吐槽</a></li><li><a href="../16/index.html">我的三体</a></li><li><a href="../15/index.html">在路上，忽然想到</a></li>            </ul>
         </section>
     
             <section class="widget">
