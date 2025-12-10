@@ -14,7 +14,7 @@
 
 ## 使用指南
 
-* 环境：Python 3.9+。
+* 环境：Python 3.13(uv虚拟环境)。
 * 推荐安装和使用 uv 管理 Python 项目工程
 
 ```bash
@@ -43,7 +43,7 @@ uv run python mirror.py --url https://example.com/ --output-dir my_site
 
 ## 自动任务
 
-可以参考`run_mirror.sh`，将本项目部署在服务器上，以实现自动镜像任务。
+可以参考`run_mirror.sh`，将本项目部署在服务器上，以实现自动任务。
 
 ## 许可证 | License
 
